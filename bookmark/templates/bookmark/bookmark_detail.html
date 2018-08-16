@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Details{% endblock %}
+{% block content %}
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" class="btn btn-success" value="Detail" />
+
+        <table>
+            <tbody>
+            <tr>
+                <th>
+                    Name:
+                </th>
+                <th>
+                    {{object.site_name}}
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    URL:
+                </td>
+                <td>
+                    <a href="{{object.url}}" target="_blank">{{object.url}}</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+{% endblock %}
